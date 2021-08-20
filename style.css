@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    font-family: 'Righteous', cursive;
+}
+.counter {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: palevioletred;
+    position: relative;
+}
+.counter .num {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 100px;
+    opacity: 0;
+}
+.replay {
+    margin-top: 30px;
+    font-size: 20px;
+    background-color: #e8e8e8;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.replay.hidden {
+    opacity: 0;
+}
+
+.num.in {
+    animation: fadeIn 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.num.out {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    to {
+        transform: translateY(100%);
+    }
+}
